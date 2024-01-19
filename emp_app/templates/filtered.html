@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: #fffdd0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .go-home-button {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #28a745; /* Green color for the button */
+        color: #fff; /* White text color */
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    table {
+        margin-top: 60px; /* Adjust the margin-top value as needed */
+        border: 5px solid black;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+</style>
+<body   style="background-color: #FFD580">
+    <a class="go-home-button" href="/">Go to Home</a>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Department</th>
+            <th>Job Location</th>
+            <th>Salary</th>
+            <th>Bonus</th>
+            <th>Phone no.</th>
+            <th>Hired On</th>
+        </tr>
+        {% for i in x %}
+            <tr>
+                <td>{{ i.f_name }} {{ i.l_name }}</td>
+                <td>{{ i.role }}</td>
+                <td>{{ i.dept.name }}</td>
+                <td>{{ i.dept.location }}</td>
+                <td>{{ i.salary }}</td>
+                <td>{{ i.bonus }}</td>
+                <td>{{ i.phone }}</td>
+                <td>{{ i.hire_date }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <style>
+        body {
+            background-color: #fffdd0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            padding: 20px;
+            background-color: #FFD580;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-weight: bold;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .details {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        button {
+            text-decoration: none;
+            margin-top: 20px;
+            cursor: pointer;
+            color: #fff;
+            background-color: #f39c12; /* Attractive button color */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            border-radius: 50%; /* Circular image */
+            width: 150px; /* Adjust the size as needed */
+            height: 150px; /* Adjust the size as needed */
+        }
+
+    </style>
+</head>
+
+<body>
+    
+    <div class="container">
+        <h1>{{ x.f_name }} {{ x.l_name }}</h1>
+        <div class="details">Employee ID: {{ x.id }}</div>
+        <div class="details">Department: {{ x.dept.name }}</div>
+        <div class="details">Role: {{ x.role.name }}</div>
+        <div class="details">Salary: {{ x.salary }}</div>
+        <div class="details">Bonus: {{ x.bonus }}</div>
+        <div class="details">Phone: {{ x.phone }}</div>
+        <div class="details">Hiring Date: {{ x.hire_date }}</div>
+        <div class="details">Location: {{ x.dept.location }}</div>
+        
+
+        <a href="/" style="text-decoration: none;"><button>Home</button></a>
+        <a href="/viewall" style="text-decoration: none;"><button>Back</button></a>
+    </div>
+</body>
+
+</html>
