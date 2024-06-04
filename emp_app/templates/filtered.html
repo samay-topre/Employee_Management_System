@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
 </head>
 <style>
     body {
-        background-color: #fffdd0;
+        background-color: #ADD8E6;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
         padding: 0;
@@ -18,8 +19,8 @@
         position: fixed;
         top: 20px;
         right: 20px;
-        background-color: #28a745; /* Green color for the button */
-        color: #fff; /* White text color */
+        background-color: #145DA0;
+        color: #fff;
         padding: 10px 20px;
         border: none;
         border-radius: 5px;
@@ -29,13 +30,14 @@
     }
 
     table {
-        margin-top: 60px; /* Adjust the margin-top value as needed */
+        margin-top: 60px;
         border: 5px solid black;
         border-collapse: collapse;
         width: 100%;
     }
 
-    th, td {
+    th,
+    td {
         border: 1px solid black;
         padding: 8px;
         text-align: left;
@@ -44,9 +46,9 @@
     th {
         background-color: #f2f2f2;
     }
-
 </style>
-<body   style="background-color: #FFD580">
+
+<body>
     <a class="go-home-button" href="/">Go to Home</a>
     <table>
         <tr>
@@ -55,22 +57,23 @@
             <th>Department</th>
             <th>Job Location</th>
             <th>Salary</th>
-            <th>Bonus</th>
+            <th>Joining Bonus</th>
             <th>Phone no.</th>
             <th>Hired On</th>
         </tr>
         {% for i in x %}
-            <tr>
-                <td>{{ i.f_name }} {{ i.l_name }}</td>
-                <td>{{ i.role }}</td>
-                <td>{{ i.dept.name }}</td>
-                <td>{{ i.dept.location }}</td>
-                <td>{{ i.salary }}</td>
-                <td>{{ i.bonus }}</td>
-                <td>{{ i.phone }}</td>
-                <td>{{ i.hire_date }}</td>
-            </tr>
+        <tr>
+            <td>{{ i.f_name }} {{ i.l_name }}</td>
+            <td>{{ i.role }}</td>
+            <td>{{ i.dept.name }}</td>
+            <td>{{ i.dept.location }}</td>
+            <td>{{ i.salary }}</td>
+            <td>{{ i.bonus }}</td>
+            <td>{{ i.phone }}</td>
+            <td>{{ i.hire_date }}</td>
+        </tr>
         {% endfor %}
     </table>
 </body>
+
 </html>

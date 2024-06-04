@@ -7,7 +7,7 @@
     <title>Employee Details</title>
     <style>
         body {
-            background-color: #fffdd0;
+            background-color: #145DA0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
@@ -16,7 +16,7 @@
 
         .container {
             padding: 20px;
-            background-color: #FFD580;
+            background-color: #ADD8E6;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin: 20px;
@@ -34,18 +34,35 @@
             font-size: 1.2em;
             color: #555;
             margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .details:last-child {
+            border-bottom: none;
+        }
+
+        .label {
+            font-weight: bold;
         }
 
         button {
             text-decoration: none;
             margin-top: 20px;
             cursor: pointer;
-            color: #fff;
-            background-color: #f39c12; /* Attractive button color */
+            color: black;
+            background-color: #B1D4E0;
             padding: 10px 20px;
-            border: none;
+            border: 3px 3px 3px black;
             border-radius: 5px;
             font-size: 1em;
+        }
+
+        button:hover {
+            background-color: #145DA0;
+            color: white;
         }
 
         .image-container {
@@ -54,30 +71,55 @@
         }
 
         .image-container img {
-            border-radius: 50%; /* Circular image */
-            width: 150px; /* Adjust the size as needed */
-            height: 150px; /* Adjust the size as needed */
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
         }
-
     </style>
 </head>
 
 <body>
-    
     <div class="container">
         <h1>{{ x.f_name }} {{ x.l_name }}</h1>
-        <div class="details">Employee ID: {{ x.id }}</div>
-        <div class="details">Department: {{ x.dept.name }}</div>
-        <div class="details">Role: {{ x.role.name }}</div>
-        <div class="details">Salary: {{ x.salary }}</div>
-        <div class="details">Bonus: {{ x.bonus }}</div>
-        <div class="details">Phone: {{ x.phone }}</div>
-        <div class="details">Hiring Date: {{ x.hire_date }}</div>
-        <div class="details">Location: {{ x.dept.location }}</div>
-        
+        <div class="details">
+            <span class="label">Employee ID:</span>
+            <span class="value">{{ x.id }}</span>
+        </div>
+        <div class="details">
+            <span class="label">Department:</span>
+            <span class="value">{{ x.dept.name }}</span>
+        </div>
+        <div class="details">
+            <span class="label">Role:</span>
+            <span class="value">{{ x.role.name }}</span>
+        </div>
+        <div class="details">
+            <span class="label">Salary:</span>
+            <span class="value">{{ x.salary }}</span>
+        </div>
+        <div class="details">
+            <span class="label">Joining Bonus:</span>
+            <span class="value">{{ x.bonus }}</span>
+        </div>
+        <div class="details">
+            <span class="label">Phone:</span>
+            <span class="value">{{ x.phone }}</span>
+        </div>
+        <div class="details">
+            <span class="label">Hiring Date:</span>
+            <span class="value">{{ x.hire_date }}</span>
+        </div>
+        <div class="details">
+            <span class="label">Location:</span>
+            <span class="value">{{ x.dept.location }}</span>
+        </div>
 
-        <a href="/" style="text-decoration: none;"><button>Home</button></a>
-        <a href="/viewall" style="text-decoration: none;"><button>Back</button></a>
+        <a href="/" style="text-decoration: none;">
+            <button>Home</button>
+        </a>
+        <a href="/viewall" style="text-decoration: none;">
+            <button>Back</button>
+        </a>
     </div>
 </body>
 

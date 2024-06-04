@@ -2,159 +2,159 @@
 <html>
 
 <head>
-  <title>Contact Form</title>
-  <style>
-    body,
-    form {
-        margin: 0;
-        padding: 0;
-    }
+    <title>Contact Form</title>
+    <style>
+        body,
+        form {
+            margin: 0;
+            padding: 0;
+        }
 
-    form {
-        padding: 20px;
-        max-width: 600px;
-        margin: 0 auto;
-    }
+        form {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
-    label,
-    input,
-    select,
-    textarea {
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
-        margin-bottom: 10px;
-    }
+        label,
+        input,
+        select,
+        textarea {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
 
-    input[type="submit"] {
-        padding: 10px 20px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        cursor: pointer;
-        width: auto;
-    }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #B1D4E0;
+            color: black;
+            border: 3px 3px 3px black;
+            cursor: pointer;
+            width: auto;
+        }
 
-    input[type="submit"]:hover {
-        background-color: #45a049;
-    }
+        input[type="submit"]:hover {
+            background-color: #145DA0;
+        }
 
-    .content-below-navbar {
-        padding-top: 70px;
-        z-index: 2;
-    }
+        .content-below-navbar {
+            padding-top: 70px;
+            z-index: 2;
+        }
 
-    .content-below-navbar button {
-        text-decoration: none;
-        margin-top: 20px;
-        cursor: pointer;
-        color: #fff;
-        background-color: #f39c12; /* Attractive button color */
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        font-size: 1em;
-    }
+        .content-below-navbar button {
+            text-decoration: none;
+            margin-top: 20px;
+            cursor: pointer;
+            color: #fff;
+            background-color: #ADD8E6;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
 
-    .go-home-button {
+        .go-home-button {
             position: fixed;
             top: 20px;
             right: 20px;
-            background-color: #28a745; /* Green color for the button */
-            color: #fff; /* White text color */
+            background-color: #145DA0;
+            color: #fff;
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
             font-size: 1rem;
             cursor: pointer;
         }
-</style>
+    </style>
 
 </head>
 
-<body style="background-color: #fffdd0;">
-  <a  style="text-decoration: none;" class="go-home-button" href="/">Go to Home</a>
-  
-  <div  class="content-below-navbar">
-   
-    <form style="background-color: #FFD580" method="post" action="{% url 'add' %}" enctype="multipart/form-data">
-        {% csrf_token %}
-    
-        <div class="row">
-          
-            <div class="col-12">
-             
-                <div>
-                    <label for="fname">First Name:</label>
-                    <input class="form-control" type="text" id="fname" name="fname" required>
-                </div>
-    
-                <div>
-                    <label for="lname">Last Name:</label>
-                    <input class="form-control" type="text" id="lname" name="lname" required>
-                </div>
-    
-                <div>
-                    <label for="dept">Department:</label>
-                    <!-- Use a select element for the department -->
-                    <select class="form-control" id="dept" name="dept" required>
-                        <!-- Add options dynamically based on your departments -->
-                        <option value="6">Manual Testing</option>
-                        <option value="2">Automation</option>
-                        <option value="5">Python Development</option>
-                        <option value="4">.net Development</option>
-                        <option value="3">HR</option>
-                        <option value="1">Java Development</option>
-                        <!-- Add more options as needed -->
-                    </select>
-                </div>
-    
-                <div>
-                    <label for="phone">Phone No.:</label>
-                    <input class="form-control" type="tel" id="phone" name="phone" required>
-                </div>
-    
-                <div>
-                    <label for="role"></label>
-                    <!-- Use a select element for the role -->
-                    <select class="form-control" id="role" name="role" required>
-                        <!-- Add options dynamically based on your roles -->
-                        <option value="7">Project Manager</option>
-                        <option value="6">Django Developer</option>
-                        <option value="5">.net Developer</option>
-                        <option value="1">Python Developer</option>
-                        <option value="4">Senior HR</option>
-                        <option value="3">Tester</option>
-                        <option value="2">Java Developer</option>
-                        <!-- Add more options as needed -->
-                    </select>
-                </div>
-    
-                <div>
-                    <label for="salary">Salary:</label>
-                    <input class="form-control" type="number" id="salary" name="salary" required>
-                </div>
-    
-                <div>
-                    <label for="bonus">Bonus:</label>
-                    <input class="form-control" type="number" id="bonus" name="bonus" required>
-                </div>
-    
-                <div>
-                    <label for="hire">Hired Date:</label>
-                    <input class="form-control" type="date" id="hire" name="hire" required>
-                </div>
-    
-                <div style="padding-top: 10px;">
-                    <input class="form-control" type="submit" value="Submit">
-                  
+<body style="background-color:  #2E8BC0">
+    <a style="text-decoration: none;" class="go-home-button" href="/">Go to Home</a>
+
+    <div class="content-below-navbar">
+
+        <form style="background-color:  #ADD8E6" method="post" action="{% url 'add' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="row">
+
+                <div class="col-12">
+
+                    <div>
+                        <label for="fname">First Name:</label>
+                        <input class="form-control" type="text" id="fname" name="fname" required>
+                    </div>
+
+                    <div>
+                        <label for="lname">Last Name:</label>
+                        <input class="form-control" type="text" id="lname" name="lname" required>
+                    </div>
+
+                    <div>
+                        <label for="dept">Department:</label>
+
+                        <select class="form-control" id="dept" name="dept" required>
+
+                            <option value="6">Manual Testing</option>
+                            <option value="2">Automation</option>
+                            <option value="5">Python Development</option>
+                            <option value="4">.net Development</option>
+                            <option value="3">HR</option>
+                            <option value="1">Java Development</option>
+
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="phone">Phone No.:</label>
+                        <input class="form-control" type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div>
+                        <label for="role"></label>
+
+                        <select class="form-control" id="role" name="role" required>
+
+                            <option value="7">Project Manager</option>
+                            <option value="6">Django Developer</option>
+                            <option value="5">.net Developer</option>
+                            <option value="1">Python Developer</option>
+                            <option value="4">Senior HR</option>
+                            <option value="3">Tester</option>
+                            <option value="2">Java Developer</option>
+
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="salary">Salary:</label>
+                        <input class="form-control" type="number" id="salary" name="salary" required>
+                    </div>
+
+                    <div>
+                        <label for="bonus">Joining Bonus:</label>
+                        <input class="form-control" type="number" id="bonus" name="bonus" required>
+                    </div>
+
+                    <div>
+                        <label for="hire">Hired Date:</label>
+                        <input class="form-control" type="date" id="hire" name="hire" required>
+                    </div>
+
+                    <div style="  padding-top: 10px;">
+                        <input class="form-control" type="submit" value="Submit">
+
+                    </div>
                 </div>
             </div>
+        </form>
+
     </div>
-    </form>
-    
-  </div>
- 
+
 </body>
 
 </html>

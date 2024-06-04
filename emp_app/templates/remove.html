@@ -1,40 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remove An Employee</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remove An Employee</title>
 
-    <style>
-      a:hover {
-        background-color: #FFD580;
-      }
-      .go-home-button {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background-color: #28a745; /* Green color for the button */
-            color: #fff; /* White text color */
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            text-decoration: none;
-        }
-    </style>
+  <style>
+    a:hover {
+      background-color: red;
+    }
+
+    .go-home-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #B1D4E0;
+      ;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  </style>
 </head>
-<body style="background-color: #f39c12; ">
 
-    <a  style="text-decoration: none;" class="go-home-button" href="/">Go to Home</a>
-  
-  <div style="padding: 10px; background-color: #FFD580;">
-    <h1 style="margin: 10px; text-align: center; color: black; font-weight: bold; font-size: xx-large; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Select To Delete</h1>
+<body style="background-color:#ADD8E6 ;">
+
+  <a style="text-decoration: none;" class="go-home-button" href="/">Go to Home</a>
+
+  <div style="padding: 10px; background-color: #2E8BC0;">
+    <h1
+      style="margin: 10px; text-align: center; color: black; font-weight: bold; font-size: xx-large; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+      Select To Delete</h1>
   </div>
-  
-  <!-- Add this form in your HTML template -->
 
-  <table style="width: 100%; font-size: large; color: black; font-weight: bold;" class="table" align="center" cellpadding="15px" cellspacing="8px" border="3px">
+
+
+  <table style="width: 100%; font-size: large; color: black; font-weight: bold;" class="table" align="center"
+    cellpadding="15px" cellspacing="8px" border="3px">
     <thead>
       <tr>
         <th style="font-weight: bold; font-size: larger;" scope="col"></th>
@@ -44,7 +51,8 @@
       {% for i in x %}
       <tr>
         <td style="text-align: center;">
-          <a onclick="confirmDelete('{{ i.f_name }} {{ i.l_name }}', '{{ i.id }}')" style="text-decoration: none; color: black;" href="removeindv/{{ i.id }}">{{ i.f_name }} {{ i.l_name }}</a>
+          <a onclick="confirmDelete('{{ i.f_name }} {{ i.l_name }}', '{{ i.id }}')"
+            style="text-decoration: none; color: black;" href="removeindv/{{ i.id }}">{{ i.f_name }} {{ i.l_name }}</a>
         </td>
       </tr>
       {% endfor %}
@@ -56,10 +64,11 @@
       var confirmDelete = confirm("Are you sure you want to delete the entry for " + employeeName + "?");
 
       if (confirmDelete) {
-        // Redirect to the removeindv URL with the employeeId
+
         window.location.href = "removeindv/" + employeeId + "/";
       }
     }
   </script>
 </body>
+
 </html>
