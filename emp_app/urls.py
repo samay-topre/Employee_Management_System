@@ -14,7 +14,7 @@ urlpatterns = [
     path('viewall/viewone/<int:id>/', views.viewone, name='viewone'),
     path('remove/removeindv/<int:id>/', views.removeindv, name='removeindv'),
     
-    
+    path('update/<int:id>/', views.update_employee, name='update_employee'),
     
    
     

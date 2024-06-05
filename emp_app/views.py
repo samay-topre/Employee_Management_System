@@ -3,7 +3,28 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from .models import Employee, Role, Department
 from django.db.models import Q
+def update_employee(request, id):
+    employee = get_object_or_404(Employee, id=id)
+    if request.method == 'POST':
+        employee.f_name = request.POST.get('fname')
+        employee.l_name = request.POST.get('lname')
+        employee.dept_id = request.POST.get('dept')
+        employee.phone = request.POST.get('phone')
+        employee.role_id = request.POST.get('role')
+        employee.salary = request.POST.get('salary')
+        employee.bonus = request.POST.get('bonus')
+        employee.hire_date = request.POST.get('hire')
+        employee.save()
+        return redirect('viewone', id=employee.id)
 
+    departments = Department.objects.all()
+    roles = Role.objects.all()
+    context = {
+        'employee': employee,
+        'departments': departments,
+        'roles': roles
+    }
+    return render(request, 'update.html', context)
 def home(request):
     return render(request, 'index.html')
 

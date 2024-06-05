@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Update Employee Details</title>
+    <style>
+        body,
+        form {
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        label,
+        input,
+        select,
+        textarea {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #B1D4E0;
+            color: black;
+            border: 3px 3px 3px black;
+            cursor: pointer;
+            width: auto;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #145DA0;
+        }
+
+        .content-below-navbar {
+            padding-top: 70px;
+            z-index: 2;
+        }
+
+        .content-below-navbar button {
+            text-decoration: none;
+            margin-top: 20px;
+            cursor: pointer;
+            color: #fff;
+            background-color: #ADD8E6;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .go-home-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #145DA0;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body style="background-color:  #2E8BC0">
+    <a style="text-decoration: none;" class="go-home-button" href="/">Go to Home</a>
+
+    <div class="content-below-navbar">
+        <h1 style="text-align: center;">UPDATE EMPLOYEE DETAILS</h1>
+        <form style="background-color:  #ADD8E6" method="post" action="{% url 'update_employee' employee.id %}" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="row">
+
+                <div class="col-12">
+
+                    <div>
+                        <label for="fname">First Name:</label>
+                        <input class="form-control" type="text" id="fname" name="fname" value="{{ employee.f_name }}" required>
+                    </div>
+
+                    <div>
+                        <label for="lname">Last Name:</label>
+                        <input class="form-control" type="text" id="lname" name="lname" value="{{ employee.l_name }}" required>
+                    </div>
+
+                    <div>
+                        <label for="dept">Department:</label>
+                        <select class="form-control" id="dept" name="dept" required>
+                            {% for dept in departments %}
+                                <option value="{{ dept.id }}" {% if dept.id == employee.dept_id %}selected{% endif %}>{{ dept.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="phone">Phone No.:</label>
+                        <input class="form-control" type="tel" id="phone" name="phone" value="{{ employee.phone }}" required>
+                    </div>
+
+                    <div>
+                        <label for="role">Role:</label>
+                        <select class="form-control" id="role" name="role" required>
+                            {% for role in roles %}
+                                <option value="{{ role.id }}" {% if role.id == employee.role_id %}selected{% endif %}>{{ role.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="salary">Salary:</label>
+                        <input class="form-control" type="number" id="salary" name="salary" value="{{ employee.salary }}" required>
+                    </div>
+
+                    <div>
+                        <label for="bonus">Joining Bonus:</label>
+                        <input class="form-control" type="number" id="bonus" name="bonus" value="{{ employee.bonus }}" required>
+                    </div>
+
+                    <div>
+                        <label for="hire">Hired Date:</label>
+                        <input class="form-control" type="date" id="hire" name="hire" value="{{ employee.hire_date|date:'Y-m-d' }}" required>
+                    </div>
+
+                    <div style="padding-top: 10px;">
+                        <input class="form-control" type="submit" value="Update">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
